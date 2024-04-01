@@ -23,7 +23,6 @@ function Navbar() {
       });
   };
  const transitionNavbar=() =>{
-  console.log(window.scrollY);
   if (window.scrollY >320) {
     handleShow(true);
   } else {
@@ -37,7 +36,6 @@ useEffect(() => {
       window.removeEventListener("scroll",transitionNavbar);
     };
   }, []);
- console.log(show);
   return(
     <div className={`nav ${show && 'nav_black'}`}>
       <img

@@ -14,7 +14,8 @@ function Banner() {
     }
     fetchData();
   }, []);
-
+  
+  //after number of character you want to trucate mean give "..."
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }

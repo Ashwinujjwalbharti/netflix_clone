@@ -33,7 +33,6 @@ function Row({ num, title, fetchUrl, isLargeRow }) {
 
     },
   };
-
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(fetchUrl);
@@ -56,13 +55,17 @@ function Row({ num, title, fetchUrl, isLargeRow }) {
     }
   };
 
+
   return (
     <div className="row">
       <h2>{title}</h2>
 
       <div className="row_posters">
-        {movie.map((movie) => (
-          <img
+        {movie.map((movie) => ( 
+         (( isLargeRow && movie.poster_path) ||
+          (!isLargeRow && movie.backdrop_path)) &&  (
+          
+            <img
             className={`row_poster ${isLargeRow && "row_posterLarge"}`}
             src={`${base_Url}${
               isLargeRow ? movie.poster_path : movie.backdrop_path
@@ -70,10 +73,16 @@ function Row({ num, title, fetchUrl, isLargeRow }) {
             onClick={() => handleClick(movie)}
             alt={movie.name}
           />
+            
+          )
+        
         ))}
       </div>
       {trailerUrl && play===num && <Youtube videoId={trailerUrl} opts={opts} />}
+      <h2>{movie.title}</h2>
+      
     </div>
+   
   );
 }
 

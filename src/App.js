@@ -13,7 +13,7 @@ function App() {
       <Banner />
       <header className="App-header">
         <Row num={1} title="NETFLIX ORIGINALS" fetchUrl={requests.fetchRomanceMovies} isLargeRow={true} />
-        <Row num={2} title="Trending now" fetchUrl={requests.fetchTrending} />
+        <Row num={2} title="Trending now" fetchUrl={requests.fetchTrending}  />
         <Row num={3} title="TopRated Movies" fetchUrl={requests.fetchTopRated} />
         <Row num={4} title="ComedyMovies" fetchUrl={requests.fetchComedyMovies} />
         <Row num={5} title="HorrorMovies" fetchUrl={requests.fetchHorrorMovies} />
